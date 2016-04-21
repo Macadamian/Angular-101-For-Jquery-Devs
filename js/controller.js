@@ -1,10 +1,26 @@
 todoApp.controller('todoCtrl', TodoCtrl);
 
 function TodoCtrl() {
-   var vm = this;
+    var vm = this;
+    var ENTER_KEY = 13;
 
-   vm.title = 'todo app';
+    vm.title = 'todo app';
     vm.todos = [];
+    vm.addItem = addItem;
+
+    function addItem(e) {
+        //use enter key
+        if (e.keyCode === ENTER_KEY) {
+            vm.todos.push({
+                id: uuid(),
+                title: vm.newItemString,
+                completed: false
+            });
+
+            //clear input
+            vm.newItemString = '';
+        }
+    }
 
     function uuid() {
         var i, random;
@@ -36,7 +52,6 @@ function TodoCtrl() {
             }
         ];
     }
-
 
 
 
