@@ -6,7 +6,7 @@ It was created from a fork of the jQuery example of TodoMVC. https://github.com/
 
 ##Setup
 * from root folder:
-* '$ npm install'
+* `$ npm install`
 * serve project with any simple webserver. Recommend python's SimpleHTTPServer or http-server
-* to use livereload: '$ livereload .'
+* to use livereload: `$ livereload .`
 * in your browser, load 127.0.0.1:8000
