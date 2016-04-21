@@ -7,6 +7,17 @@ function TodoCtrl() {
     vm.title = 'todo app';
     vm.todos = [];
     vm.addItem = addItem;
+    vm.activeCount = activeCount;
+
+    function activeCount() {
+        var count = 0;
+        for (var i = 0; i < vm.todos.length; i++) {
+            if (! vm.todos[i].completed) {
+                count++;
+            }
+        }
+        return count;
+    }
 
     function addItem(e) {
         //use enter key

@@ -24,7 +24,7 @@
 			</ul>
 			</section>
 			<footer id="footer">
-				<span id="todo-count"><strong><span id="active-todo-count"></span></strong>&nbsp;<span id="active-todo-word"></span>&nbsp;left</span>
+				<span id="todo-count"><strong><span id="active-todo-count">{{c.activeCount()}}</span></strong>&nbsp;<span id="active-todo-word">todo<span ng-if="c.activeCount() > 1">s</span></span>&nbsp;left</span>
 				<ul id="filters">
 					<li>
 						<button>All</button>
