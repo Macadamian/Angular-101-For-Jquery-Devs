@@ -15,7 +15,7 @@
 			</header>
 			<section id="main">
 			<ul id="todo-list">
-				<li ng-class="{completed: item.completed}" ng-repeat="item in c.todos | filter:{completed: c.showCompleted}">
+				<li ng-class="{completed: item.completed}" ng-repeat="item in c.todos | orderBy:'completed' | filter:{completed: c.showCompleted}">
 					<div class="view">
 						<input class="toggle" type="checkbox" ng-model="item.completed">
 						<label>{{item.title}}</label>
