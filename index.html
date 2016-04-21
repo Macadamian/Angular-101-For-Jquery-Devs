@@ -15,7 +15,7 @@
 			</header>
 			<section id="main">
 			<ul id="todo-list">
-				<li ng-class="{completed: item.completed}" ng-repeat="item in c.todos">
+				<li ng-class="{completed: item.completed}" ng-repeat="item in c.todos | filter:{completed: c.showCompleted}">
 					<div class="view">
 						<input class="toggle" type="checkbox" ng-model="item.completed">
 						<label>{{item.title}}</label>
@@ -27,13 +27,13 @@
 				<span id="todo-count"><strong><span id="active-todo-count">{{c.activeCount()}}</span></strong>&nbsp;<span id="active-todo-word">todo<span ng-if="c.activeCount() > 1">s</span></span>&nbsp;left</span>
 				<ul id="filters">
 					<li>
-						<button>All</button>
+						<button ng-click="c.showCompleted = ''">All</button>
 					</li>
 					<li>
-						<button>Active</button>
+						<button ng-click="c.showCompleted = false">Active</button>
 					</li>
 					<li>
-						<button>Completed</button>
+						<button ng-click="c.showCompleted = true">Completed</button>
 					</li>
 				</ul>
 			</footer>
